@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.mapper.VendedorMapper">
+
+<select id="listado" resultType="model.Vendedor">
+select
+dis_ven as distrito,
+count(dis_ven) as total
+from tb_vendedor
+group by distrito
+order by distrito
+
+
+</select>
+</mapper>
